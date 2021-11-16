@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <iostream> //стек - облатсь в памяти где выполняется программа
 using namespace std;
 void InputSize(int* size, char letter);
 void Input(int* size, char letter, int* array);
