@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
-void delel(int& size, int*& array, int nom);
+void del(int& size, int*& array, int nom);
 void FillArrayR(const int& size, int array[]);
 void OutArray(const int& size, int array[]);
 
@@ -9,8 +9,17 @@ int main()
 {
 	int size = 0;
 	cout << "enter size of array\n";
-	//cin >> size;
-	size = 9;
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 	int sizen = size;
 
 	
@@ -25,7 +34,7 @@ int main()
 		{
 			if (array[j] == array[i])
 			{
-				delel(size, array, j + 1);
+				del(size, array, j + 1);
 				j--;
 			}
 		}
@@ -47,7 +56,18 @@ void FillArrayR(const int& size, int array[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		array[i] = rand() % 10;
+		cout << "enter " << i << "ellement of array" << endl;
+		while (true)
+		{
+			cin >> array[i];
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+				cout << "oops smth went wrong, try again" << endl;
+			}
+			else break;
+		}
 	}
 }
 void OutArray(const int& size, int array[])
@@ -58,7 +78,7 @@ void OutArray(const int& size, int array[])
 			cout << array[i] << " ";
 	}
 }
-void delel(int& size, int*& array, int numb)
+void del(int& size, int*& array, int numb)
 {
 	int* newarray = new int[size - 1];
 	for (int i = 0, j = 0; i < size; i++, j++)

@@ -8,8 +8,17 @@ int main()
 {
 	int size;
 	cout << "enter size of array\n";
-	cin >> size;
-
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 
 	int*** array = new int** [size]; //создание массива
 	for (int i = 0; i < size; i++)

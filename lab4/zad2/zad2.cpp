@@ -16,7 +16,17 @@ int main()
 	{
 		for (int j = 0; j < M; j++)
 		{
-			cin >> array[i][j];
+			while (true)
+			{
+				cin >> array[i][j];
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore(INT_MAX, '\n');
+					cout << "oops smth went wrong, try again" << endl;
+				}
+				else break;
+			}
 		}
 	}
 

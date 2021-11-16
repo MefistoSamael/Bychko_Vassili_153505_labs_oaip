@@ -4,8 +4,19 @@ using namespace std;
 int main()
 {
 	int numb;
-	cout << "enter number" << endl;
-	cin >> numb;
+	cout << "enter natural number" << endl;
+	while (true)
+	{
+		cin >> numb;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		if (numb < 0) cout << "numb must be natural" << endl;
+		else break;
+	}
 	int amount = 0;
 	for (numb; numb > 0; amount++)
 	{

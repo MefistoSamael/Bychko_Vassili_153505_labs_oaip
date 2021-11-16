@@ -8,9 +8,21 @@ void OutArray(const int& size, int array[]);
 int main()
 {
 	int size;
-	cout << "enter size of array\n";
-	cin >> size;
-	//size = 9;
+	cout << "enter size of array, size > 3\n";
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		if (size < 0) cout << "size must be natural" << endl;
+		if (size < 3) cout << "size must be >3" << endl;
+		else break;
+	}
+	size = 9;
 	int max = 0;
 	int min = INT_MAX;
 	int imax = 0;
@@ -19,10 +31,10 @@ int main()
 	srand(time(NULL));
 
 
-	//int* array = new int [size] {100, 2, 3, 4, 5, 6, 1, 9, 10}; 
-	int* array = new int[size]; //создание массива
+	int* array = new int [size] {100, 2, 3, 4, 5, 6, 1, 9, 10}; 
+	//int* array = new int[size]; //создание массива
 
-	FillArray(size, array);
+	//FillArray(size, array);
 	OutArray(size, array);
 	//если сломают сделай проверку на равнство всех эллементов массива
 	for (int i = 0; i < size; i++)
@@ -75,7 +87,7 @@ int main()
 
 	delete[] array;
 
-	OutArray(size - numofz, arraynew);
+
 
 	delete[] arraynew;
 

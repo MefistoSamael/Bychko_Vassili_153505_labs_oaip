@@ -16,10 +16,30 @@ int main()
 	int numbstr = 0;
 	int numbclmn = 0;
 	cout << "enter number of strings and columns\n";
-	cin >> numbstr;
-	cin >> numbclmn;
-
-
+	while (true)
+	{
+		cin >> numbstr;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	while (true)
+	{
+		cin >> numbclmn;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	
+	
 	char** array = new char* [numbstr]; //создание массива
 	for (int i = 0; i < numbstr; i++)
 	{

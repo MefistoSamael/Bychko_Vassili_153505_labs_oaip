@@ -5,7 +5,17 @@ int main()
 {
 	int size;
 	cout << "enter size of array" << endl;
-	cin >> size;
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 	int **array = new int*[size];// количество строк size
 	for (int i = 0; i < size; i++) //задание столбцов
 	{
@@ -17,7 +27,18 @@ int main()
 	{
 		for (int j = 0; j < size; j++)
 		{
-			cin >> array[i][j];
+			while (true)
+			{
+				cin >> array[i][j];
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore(INT_MAX, '\n');
+					cout << "oops smth went wrong, try again" << endl;
+				}
+				else if (array[i][j] <0 || array[i][j] > 1) cout << "oops, its not 0 or 1, try again" << endl;
+				else break;
+			}
 		}
 	}
 	for (int i = 0; i < size; i++) //вывод элементов массива

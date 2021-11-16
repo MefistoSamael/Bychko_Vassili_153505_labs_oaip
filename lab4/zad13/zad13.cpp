@@ -8,8 +8,24 @@ int main()
 {
 	int numb = 0;
 	cout << "enter numb of udlinnitelei\n";
-	cin >> numb;
-	//srand(time(NULL));
+	while (true)
+	{
+		cin >> numb;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	
+	if (numb == 0)
+	{
+		cout << "\nnumb of sockets = 0";
+		return 0;
+	}
+	srand(time(NULL));
 
 
 	int* array = new int [numb]; //создание массива
@@ -26,7 +42,7 @@ int main()
 	}
 	sum -= numb;
 
-	cout << "\nnumb of rozetok = " << sum;
+	cout << "\nnumb of sockets = " << sum -1;
 	delete[] array;
 
 }

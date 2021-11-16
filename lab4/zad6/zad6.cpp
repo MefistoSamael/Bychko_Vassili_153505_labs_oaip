@@ -1,29 +1,51 @@
 ﻿#include <iostream>
 using namespace std;
 
-void FillArrayR(const int& size, int* array[]);
-void OutArray(const int& size, int* array[]);
+void FillArrayR(const int& str, const int& clmn, int* array[]);
+void OutArray(const int& str, const int& clmn, int* array[]);
 
 int main()
 {
-	int size;
-	cout << "enter size of array\n";
-	//cin >> size;
-	size = 3;
-
-	int** array = new int* [size]; //создание массива
-	for (int i = 0; i < size; i++)
+	srand(time(NULL));
+	int str;
+	int clmn;
+	cout << "enter numb of str and clmn in that order\n";
+	while (true)
 	{
-		array[i] = new int[size];
+		cin >> str;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	while (true)
+	{
+		cin >> clmn;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
 	}
 
-	FillArrayR(size, array);
-	OutArray(size, array);
+	int** array = new int* [str]; //создание массива
+	for (int i = 0; i < str; i++)
+	{
+		array[i] = new int[clmn];
+	}
+
+	FillArrayR(str,clmn, array);
+	OutArray(str,clmn, array);
 	int max;
 	max = 0;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < str; i++)
 	{
-		for (int j = 0; j < size; j++)
+		for (int j = 0; j < clmn; j++)
 		{
 			max = 0;
 			max = array[i][j];
@@ -39,9 +61,9 @@ int main()
 			array[i][j] = max;
 		}
 	}
-	OutArray(size, array);
+	OutArray(str,clmn, array);
 
-	for (int i = 0; i < size; i++)// удаление массива
+	for (int i = 0; i < str; i++)// удаление массива
 	{
 		delete[] array[i];
 	}
@@ -50,22 +72,22 @@ int main()
 }
 
 
-void FillArrayR(const int& size, int* array[])
+void FillArrayR(const int& str, const int& clmn, int* array[])
 {
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < str; i++)
 	{
-		for (int j = 0; j < size; j++)
+		for (int j = 0; j < clmn; j++)
 		{
 			array[i][j] = rand() % 10;
 		}
 	}
 }
-void OutArray(const int& size, int* array[])
+void OutArray(const int& str, const int& clmn, int* array[])
 {
 	cout << endl;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < str; i++)
 	{
-		for (int j = 0; j < size; j++)
+		for (int j = 0; j < clmn; j++)
 		{
 			cout << array[i][j] << " ";
 		}

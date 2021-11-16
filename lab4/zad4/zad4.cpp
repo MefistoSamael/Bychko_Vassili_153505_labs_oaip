@@ -9,8 +9,22 @@ int main()
 	sum = 0;
 	int maxnumb;
 	maxnumb = 0;
-	cout << "enter size of array" << endl;
-	cin >> size;
+	cout << "enter size of array; size <= INT_MAX - 3" << endl;
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else if (size > INT_MAX - 3) cout << "its too big, try again";
+		else if (size < 0) cout << "no comment, try again";
+		else break;
+	}
+	
+	
 
 
 	int** array = new int* [size]; //создание массива
@@ -23,7 +37,17 @@ int main()
 	{
 		for (int j = 0; j < size; j++)
 		{
-			cin >> array[i][j];
+			while (true)
+			{
+				cin >> array[i][j];
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore(INT_MAX, '\n');
+					cout << "oops smth went wrong, try again" << endl;
+				}
+				else break;
+			}
 		}
 	}
 

@@ -10,10 +10,33 @@ int main()
 	int size;
 	size = 0;
 	cout << "enter size of array" << endl;
-	cin >> size;
+	while (true)
+	{
+		cin >> size;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else if (size < 0) cout << "no comment, try again";
+		else break;
+	}
 	cout << "randomize number in array? (Y or N) " << endl;
 	char choice;
-	cin >> choice;
+	while (true)
+	{
+		cin >>  choice;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else if (choice == 'Y' || choice == 'N') break;
+		else cout << "only Y or N" << endl;
+	}
+	
 	if (choice == 'Y') srand(time(NULL));
 
 

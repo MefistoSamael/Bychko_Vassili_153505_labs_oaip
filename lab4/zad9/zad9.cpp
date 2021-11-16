@@ -11,8 +11,28 @@ int main()
 	int numbstr = 0;
 	int numbclmn = 0;
 	cout << "enter number of strings and columns in 1array\n";
-	cin >> numbstr;
-	cin >> numbclmn;
+	while (true)
+	{
+		cin >> numbstr;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	while (true)
+	{
+		cin >> numbclmn;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 
 
 	int** array1 = NULL; //создание массива
@@ -28,9 +48,28 @@ int main()
 	cout << "enter number of strings and columns in 2 array\n";
 	int numbstr2 = 0;
 	int numbclmn2 = 0;
-	//тут должна ыбть проверка на ввод
-	cin >> numbstr2;
-	cin >> numbclmn2;
+	while (true)
+	{
+		cin >> numbstr2;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
+	while (true)
+	{
+		cin >> numbclmn2;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 
 	int** array2 = NULL;
 	array2 = (int**)malloc(numbstr2 * sizeof(int));
