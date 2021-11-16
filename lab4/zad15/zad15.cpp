@@ -33,43 +33,43 @@ int main()
 	k++;
 	for (int i = 0, j = 0; i < size;)
 	{
-			i = 0;
-			if (array[i][j + 1] == 0)
+		i = 0;
+		if (array[i][j + 1] == 0)
+		{
+			j++;
+			array[i][j] = k;
+			if (k == number)
 			{
-				j++;
-				array[i][j] = k;
-				if (k == number)
-				{
-					cout << i + 1 << " string; " << j + 1 << " clmn";
-				}
-				k++;
+				cout << i + 1 << " string; " << j + 1 << " clmn";
 			}
-			for (;array[i + 1][j] == 0;)
+			k++;
+		}
+		for (; array[i + 1][j] == 0;)
+		{
+			i++;
+			array[i][j] = k;
+			if (k == number)
 			{
-				i++;
-				array[i][j] = k;
-				if (k == number)
-				{
-					cout << i + 1 << " string; " << j + 1 << " clmn";
-				}
-				k++;
-				if (array[i][j - 1] == 0) break;
+				cout << i + 1 << " string; " << j + 1 << " clmn";
 			}
-			while (j > 0)
+			k++;
+			if (array[i][j - 1] == 0) break;
+		}
+		while (j > 0)
+		{
+			j--;
+			array[i][j] = k;
+			if (k == number)
 			{
-				j--;
-				array[i][j] = k;
-				if (k == number)
-				{
-					cout << i + 1 << " string; " << j + 1 << " clmn";
-				}
-				k++;
+				cout << i + 1 << " string; " << j + 1 << " clmn";
 			}
-			j = i;
-			if (i == size - 1) break;
-			continue;
+			k++;
+		}
+		j = i;
+		if (i == size - 1) break;
+		continue;
 	}
-	
+
 
 
 	for (int i = 0; i < size; i++)// удаление массива
@@ -103,3 +103,4 @@ void OutArray(const int& size, int* array[])
 		cout << endl;
 	}
 }
+
