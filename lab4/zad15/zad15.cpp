@@ -9,7 +9,17 @@ int main()
 	int size = 0;
 	int number;
 	cout << "enter number\n";
-	cin >> number;
+	while (true)
+	{
+		cin >> number;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			cout << "oops smth went wrong, try again" << endl;
+		}
+		else break;
+	}
 
 	size = sqrt(number) + 1;
 
