@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
 	int numb;
+	int numb2;
 	cout << "enter natural number" << endl;
 	while (true)
 	{

@@ -39,7 +39,7 @@ int main()
 		{
 			while (true)
 			{
-				cin >> array[i][j];
+				array[i][j] = rand() % 10;
 				if (cin.fail())
 				{
 					cin.clear();
@@ -67,7 +67,6 @@ int main()
 			if (array[i + 1][j + 1] > array[i][j]) maxnumb = array[i + 1][j + 1];
 		}
 	}
-	cout << "mn = " << maxnumb << endl;
 	maxnumb = maxnumb + 1;
 
 

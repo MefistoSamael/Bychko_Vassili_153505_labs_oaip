@@ -31,7 +31,7 @@ int main()
 	srand(time(NULL));
 
 
-	int* array = new int [size] {100, 2, 3, 4, 5, 6, 1, 9, 10}; 
+	int* array = new int [size] {86, 5, 13, 72, 15, 36, 8, 93, 96, 13};
 	//int* array = new int[size]; //создание массива
 
 	//FillArray(size, array);
@@ -98,7 +98,7 @@ void FillArray(const int& size, int array[])
 {
 	for (int i = 0; i < size; i++)
 	{
-		array[i] = rand();
+		cin >> array[i];
 	}
 	while (true)
 	{
