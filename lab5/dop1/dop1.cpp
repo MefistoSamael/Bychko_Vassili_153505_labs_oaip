@@ -9,23 +9,54 @@
 */
 
 #include <iostream>
+#include "MyLibrary.h"
+#include <Windows.h>
 using namespace std;
 
-void Fill(const int& str, const int& clmn, int** array);
-void Out(const int& str, const int& clmn, int** array);
-void Out(const int& size, int* array);
-int prod(const int& size, int* array);
-void check(int& number);
 
 
 int main()
 {
+	HINSTANCE load1;
+	load1 = LoadLibrary(L"MyLibrary.dll");
+	typedef double (*check) (int&);
+	check checktrue;
+	checktrue = (check)GetProcAddress(load1, "check");
+
+
+	HINSTANCE load2;
+	load2 = LoadLibrary(L"MyLibrary.dll");
+	typedef double (*Fill) (const int&, const int&, int**);
+	Fill Fil;
+	Fil = (Fill)GetProcAddress(load2, "Fill");
+
+
+	HINSTANCE load3;
+	load3 = LoadLibrary(L"MyLibrary.dll");
+	typedef double (*Out2) (const int&, const int&, int**);
+	Out2 OOut2;
+	OOut2 = (Out2)GetProcAddress(load3, "Out2");
+
+
+	HINSTANCE load4;
+	load4 = LoadLibrary(L"MyLibrary.dll");
+	typedef double (*Out) (const int&, int*);
+	Out OOut;
+	OOut = (Out)GetProcAddress(load3, "Out");
+
+
+	HINSTANCE load5;
+	load5 = LoadLibrary(L"MyLibrary.dll");
+	typedef double (*prod) (const int&, int*);
+	prod pprod;
+	pprod = (prod)GetProcAddress(load3, "prod");
+
 	cout << "enter numb of str ";
 	int str = 0;
-	check(str);
+	checktrue(str);
 	cout << "enter numb of clmn ";
 	int clmn = 0;
-	check(clmn);
+	checktrue(clmn);
 
 
 	int** array = new int* [str];
@@ -33,8 +64,8 @@ int main()
 	{
 		array[i] = new int [clmn];
 	}
-	Fill(str, clmn, array);
-	Out(str, clmn, array);
+	Fil(str, clmn, array);
+	OOut2(str, clmn, array);
 
 	int a = 0;
 	if (str < clmn) a = str; //находим меньшую "сторону" маторицы, чтобы понять до куда считать
@@ -63,8 +94,8 @@ int main()
 			k++;
 		}
 	}
-	Out(size, array2);
-	cout << "prod = " << prod(size, array2);
+	OOut(size, array2);
+	cout << "prod = " << pprod(size, array2);
 
 
 
@@ -76,65 +107,11 @@ int main()
 
 	delete[] array2;
 
+	FreeLibrary(load1);
+	FreeLibrary(load2);
+	FreeLibrary(load3);
+	FreeLibrary(load4);
+	FreeLibrary(load5);
 	return 0;
-}
-
-void Fill(const int& str, const int& clmn, int** array)
-{
-	for (int i = 0; i < str; i++)
-	{
-		for (int j = 0; j < clmn; j++)
-		{
-			cout << "Enter array[" << i << "][" << j << "] ";
-			check(array[i][j]);
-		}
-	}
-}
-
-void Out(const int& str, const int& clmn, int** array)
-{
-	for (int i = 0; i < str; i++)
-	{
-		for (int j = 0; j < clmn; j++)
-		{
-			cout << array[i][j] << " ";
-		}
-		cout << "\n";
-	}
-	cout << "\n";
-}
-
-void Out(const int& size, int* array)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << array[i] << " ";
-	}
-	cout << "\n";
-}
-
-int prod(const int& size, int* array)
-{
-	int prod = 1;
-	for (int i = 0; i < size; i++)
-	{
-		prod *= array[i];
-	}
-	return prod;
-}
-
-void check(int& number)
-{
-	while (true)
-	{
-		cin >> number;
-		if (cin.fail())
-		{
-			cin.clear();
-			cin.ignore(INT_MAX, '\n');
-			cout << "oops, smth went wrong, try again\n";
-		}
-		else break;
-	}
 }
 

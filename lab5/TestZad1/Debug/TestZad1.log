@@ -1,0 +1,7 @@
+﻿  test.cpp
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\TestZad1\test.cpp(31,7): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\TestZad1\test.cpp(45,7): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\TestZad1\test.cpp(59,7): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\TestZad1\test.cpp(74,7): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\TestZad1\test.cpp(88,7): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+  TestZad1.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab5\Debug\TestZad1.exe

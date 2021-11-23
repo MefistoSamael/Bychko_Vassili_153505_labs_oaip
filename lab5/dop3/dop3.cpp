@@ -18,7 +18,7 @@ void Out(const int& str, const int& clmn, int** array);//вывод массив
 void Out(const int& size, int* array);
 
 void search(const int& str, const int& clmn, int** array, int* array2);//поиск нечетных эллементов
-
+int search(const int& str, const int& clmn, int** array);
 
 void avg(const int& size, int* array, int& avg);
 
@@ -37,17 +37,15 @@ int main()
 
 	Fill(str, clmn, array);
 	Out(str, clmn, array);
-	/*
-	короче, у нас косяк с размером второго массива, и функицей search. Ее надо будет переписать.
-	По поводу размера. Его можно найти следующим образом: пробегаешь изначальный массив и ищешь искомые эллементы.
-	Все, я свою задачу выполнил. Иду в арех.
-	*/
+	
+	int size = search(str, clmn, array);
+
 	int* array2 = NULL;
-	birth(str, array2);
+	birth(size, array2);
 	search(str, clmn, array, array2);
-	Out(str, array2);
+	Out(size, array2);
 	int aver = 0;
-	avg(str, array2, aver);
+	avg(size, array2, aver);
 	cout << "average of new array = " << aver;
 
 
@@ -142,20 +140,33 @@ void search(const int& str, const int& clmn, int** array, int *array2)
 	{
 		for (int j = 0; j < clmn; j++)
 		{
-			if (clmn % 2 != 0) continue;
+			if (j % 2 != 0) continue;
 			if (array[i][j] % 2 != 0)
 			{
-				*array[k] = array[i][j];
+				array2[k] = array[i][j];
 				k++;
 			}
 		}
 	}
 	
 }
+int search(const int& str, const int& clmn, int** array)
+{
+	int k = 0;
+	for (int i = 0; i < str; i++)
+	{
+		for (int j = 0; j < clmn; j++)
+		{
+			if (j % 2 != 0) continue;// скип нечетных столбцов
+			if (array[i][j] % 2 != 0) k++;
+		}
+	}
+	return k;
+}
 
 void avg(const int& size, int* array, int& avg)
 {
-	int k = 1;
+	int k = 0;
 	for (int i = 0; i < size; i++)
 	{
 		avg += array[i];

@@ -1,3 +1,2 @@
-﻿  zad2.cpp
-E:\!C++projects\Bychko_Vassili_153505_labs\lab5\zad2\zad2.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  zad2.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab5\Debug\zad2.exe
+﻿zad2.obj : error LNK2019: unresolved external symbol "void __cdecl search(int *,int,int &,int)" (?search@@YAXPAHHAAHH@Z) referenced in function _main
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\Debug\zad2.exe : fatal error LNK1120: 1 unresolved externals

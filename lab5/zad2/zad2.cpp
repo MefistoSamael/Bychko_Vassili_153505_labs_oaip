@@ -7,9 +7,9 @@
 
 
 #include <iostream> //стек - облатсь в памяти где выполняется программа
+#include "..\TrueStaticLib\TrueStaticLib\Header.h"
 using namespace std;
 
-void search(int* array, int size, int& min, int k);
 
 int main()
 {
@@ -54,14 +54,3 @@ int main()
 	return 0;
 }
 
-void search(int* array, int size, int& min, int k)
-{
-	if (min > array[k]) min = array[k];		
-	k--;
-
-	if (k == 0)
-	{
-		return;
-	}
-	search(array, size, min, k );
-}
