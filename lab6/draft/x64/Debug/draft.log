@@ -1,3 +1,0 @@
-﻿  draft.cpp
-C:\Users\ASUS\source\repos\lab6\draft\draft.cpp(11,21): error C2440: 'initializing': cannot convert from 'double (__cdecl *)(double,double)' to 'double *'
-C:\Users\ASUS\source\repos\lab6\draft\draft.cpp(11,14): message : There is no context in which this conversion is possible
