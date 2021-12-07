@@ -16,6 +16,7 @@ void insert(char* str, char* substr, char symb)
 		}
 		if (newstr[i] = substr[k])
 		{
+
 			for (; k >= 0; k++)
 			{
 				if (newstr[i] != substr[k])
