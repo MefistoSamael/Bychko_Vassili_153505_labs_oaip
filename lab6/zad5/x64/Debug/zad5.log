@@ -1,0 +1,12 @@
+﻿  zad5.cpp
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(85,65): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(87,10): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(92,10): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(98,44): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(100,4): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(107,25): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(113,4): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(120,12): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(122,11): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad5\zad5.cpp(128): warning C4715: search: значение возвращается не при всех путях выполнения
+  zad5.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad5.exe

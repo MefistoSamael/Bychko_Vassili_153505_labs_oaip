@@ -2,6 +2,7 @@
 using namespace std;
 
 void change(char* str, char* newstr);
+bool vowel(char symb);
 
 int main()
 {
@@ -15,6 +16,22 @@ int main()
 
 	return 0;
 }
+
+bool vowel(char symb)
+{
+	if ((symb != 65 || symb != 69 || symb != 73 || symb != 79 || symb != 85 || symb != 89 || symb != 97 || symb != 101 || symb != 105 || symb != 111 || symb != 117 || symb != 121) && ((symb >= 66 && symb <= 90) || (symb >= 98 && symb <= 122)))
+	{
+		return 1;
+	}
+	else return 0;
+}
+
+bool isequal(char symb, char symb1)
+{
+	if (symb == symb1 || symb + 32 == symb1 || symb == symb1 + 32) return 1;
+	else return 0;
+}
+
 
 void change(char* str, char* newstr)
 {
@@ -193,7 +210,7 @@ void change(char* str, char* newstr)
 	}
 	for (int i = 0, j =0; i < strlen(newstr); i++)
 	{
-		if (temp[i] == temp[i + 1])
+		if (isequal(temp[i], temp[i+1]) && vowel(temp[i]) )
 		{
 			numeq++;
 			continue;
@@ -203,5 +220,6 @@ void change(char* str, char* newstr)
 	}
 	newstr[strlen(newstr) - numeq] = '\0';
 }
+
 
 //kxssaaa pph 1999
