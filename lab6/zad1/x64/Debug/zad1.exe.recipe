@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
+      <FullPath>E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad1.exe</FullPath>
+=======
       <FullPath>C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad1.exe</FullPath>
+>>>>>>> 9ce671ee0b30044ccfb8f52bff8e7abd9842bbfc
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

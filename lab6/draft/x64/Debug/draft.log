@@ -1,3 +1,4 @@
 ﻿  draft.cpp
-C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\draft\draft.cpp(33,4): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  draft.vcxproj -> C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\draft.exe
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\draft\draft.cpp(27,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\draft\draft.cpp(61,23): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+  draft.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\draft.exe
