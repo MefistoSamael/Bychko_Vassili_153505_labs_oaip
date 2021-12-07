@@ -1,0 +1,3 @@
+﻿  test.cpp
+E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad3Test\test.cpp(11,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  zad3Test.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad3Test.exe
