@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <fstream>
 using namespace std;
 
 void change(char* str, char* newstr);
@@ -7,8 +8,8 @@ bool vowel(char symb);
 int main()
 {
 	char* str = new char[100];
-	cout << "Enter text :";
-	cin.getline(str, 99);
+	ifstream fin("input.txt");
+	fin >> str;
 	char* newstr = new char[300];
 	newstr[299] = '\0';
 	change(str,newstr);

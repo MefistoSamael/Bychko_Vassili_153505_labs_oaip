@@ -1,0 +1,4 @@
+﻿  test.cpp
+C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\zad8Test\test.cpp(15,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\zad8Test\test.cpp(16,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  zad8Test.vcxproj -> C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad8Test.exe

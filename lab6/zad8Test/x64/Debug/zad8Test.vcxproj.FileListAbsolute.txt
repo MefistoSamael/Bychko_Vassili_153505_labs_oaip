@@ -1,0 +1,1 @@
+C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\zad8Test\x64\Debug\zad8Test.vcxproj.CopyComplete

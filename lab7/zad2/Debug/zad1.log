@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (zad1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  zad2.cpp
+C:\Users\ASUS\source\repos\lab7\zad1\zad2.cpp(18,30): warning C4244: '=': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Users\ASUS\source\repos\lab7\zad1\zad2.cpp(22,61): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\ASUS\source\repos\lab7\zad1\zad2.cpp(28,60): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  zad1.vcxproj -> C:\Users\ASUS\source\repos\lab7\Debug\zad2.exe
