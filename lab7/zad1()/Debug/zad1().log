@@ -1,0 +1,8 @@
+﻿  zad1().cpp
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(33,23): warning C4244: =: преобразование "double" в "__int64", возможна потеря данных
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(34,37): warning C4244: =: преобразование "std::streamsize" в "int", возможна потеря данных
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(38,38): warning C4244: +=: преобразование "double" в "__int64", возможна потеря данных
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(51,47): warning C4244: =: преобразование "double" в "__int64", возможна потеря данных
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(70): warning C4715: numb: значение возвращается не при всех путях выполнения
+C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(18): warning C4715: numbtochar: значение возвращается не при всех путях выполнения
+  zad1().vcxproj -> C:\Users\User\source\repos\lab7\Debug\zad1().exe
