@@ -1,4 +1,0 @@
-﻿  zad3.cpp
-E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad3\zad3.cpp(61,22): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
-E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad3\zad3.cpp(73,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  zad3.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad3.exe

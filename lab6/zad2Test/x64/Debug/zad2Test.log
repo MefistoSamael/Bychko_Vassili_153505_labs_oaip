@@ -1,4 +1,0 @@
-﻿  test.cpp
-E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad2Test\test.cpp(21,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-E:\!C++projects\Bychko_Vassili_153505_labs\lab6\zad2Test\test.cpp(55,23): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
-  zad2Test.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad2Test.exe

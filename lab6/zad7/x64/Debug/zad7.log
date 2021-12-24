@@ -1,4 +1,0 @@
-﻿  zad7.cpp
-C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\zad7\zad7.cpp(12,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\zad7\zad7.cpp(18,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  zad7.vcxproj -> C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad7.exe
