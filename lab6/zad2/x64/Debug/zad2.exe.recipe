@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+<<<<<<< HEAD:lab6/zad2/x64/Debug/zad2.exe.recipe
+      <FullPath>E:\!C++projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\zad2.exe</FullPath>
+=======
+      <FullPath>C:\Program Files (x86)\c++ projects\Bychko_Vassili_153505_labs\lab6\x64\Debug\draft.exe</FullPath>
+>>>>>>> 9ce671ee0b30044ccfb8f52bff8e7abd9842bbfc:lab6/draft/x64/Debug/draft.exe.recipe
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
