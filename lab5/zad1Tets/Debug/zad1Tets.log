@@ -1,0 +1,4 @@
+﻿  test.cpp
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\zad1Tets\test.cpp(38,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\!C++projects\Bychko_Vassili_153505_labs\lab5\zad1Tets\test.cpp(48,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  zad1Tets.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab5\Debug\zad1Tets.exe
