@@ -1,541 +1,984 @@
-﻿#include <iostream>
+﻿#include <string>
+#include <iostream>
 #include <Windows.h>
-#include <string.h>
-#include <string>
-#include <fstream>
+#include <malloc.h>
+#include <iomanip>
+#include <fstream> 
+#include <cstdlib>
 
-using namespace std;
-class students {
-private:
+std::ofstream fout("output.txt");
+std::ifstream fin("output.txt");
 
-	string name;//имя
+void _()
+{
+	std::cout << std::endl;
+}
 
-	string Lastname;//фамилия
+void I()
+{
+	std::cout << "\t\t\t\t\t";
+}
 
-	string patronymic;//отчество
-
-	int numb;//номер группы
-
-	double avg;//средний балл
-
-	int income;//доход на члена семьи
-
-
-
+class Rate_list
+{
 public:
-	void set_name(string student_name)
+
+	void set_name(char* _name)
 	{
-		name = student_name;
+		for (int i = 0; i < 40; i++)
+		{
+			name[i] = _name[i];
+		}
 	}
-	string get_name()
+	char* get_name()
 	{
 		return name;
 	}
 
-
-	void set_lname(string student_lname)
+	void set_surname(char* _surname)
 	{
-		Lastname = student_lname;
+		for (int i = 0; i < 40; i++)
+		{
+			surname[i] = _surname[i];
+		}
 	}
-	string get_lname()
+	char* get_surname()
 	{
-		return Lastname;
-	}
-
-
-	void set_patr(string student_patr)
-	{
-		patronymic = student_patr;
-	}
-	string get_patr()
-	{
-		return patronymic;
+		return surname;
 	}
 
-
-	void set_numb(int num)
+	void set_second_name(char* _second_name)
 	{
-		numb = num;
+		for (int i = 0; i < 40; i++)
+		{
+			second_name[i] = _second_name[i];
+		}
 	}
-	int get_numb()
+	char* get_second_name()
 	{
-		return numb;
-	}
-
-
-	void set_avg(double a)
-	{
-		avg = a;
-	}
-	double get_avg()
-	{
-		return avg;
+		return second_name;
 	}
 
-
-	void set_income(int a)
+	void set_grup_nomber(int _grup_nomber)
 	{
-		income = a;
+		grup_nomber = _grup_nomber;
 	}
-	int get_income()
+	int get_grup_nomber()
 	{
-		return income;
+		return grup_nomber;
 	}
 
+	void set_average(double _average)
+	{
+		average = _average;
+	}
+	double get_average()
+	{
+		return average;
+	}
+
+	void set_stonks(int _stonks)
+	{
+		stonks = _stonks;
+	}
+	int get_stonks()
+	{
+		return stonks;
+	}
+
+private:
+
+	char name[40];
+
+	char surname[40];
+
+	char second_name[40];
+
+	int grup_nomber;
+
+	double average;
+
+	int stonks;
 };
-int SIZEOFARR = 3;
-students* stud = new students[SIZEOFARR];
 
+void add(Rate_list*& List, int& size);
 
+void add_check(Rate_list*& List, int& size);
 
-int checkinp(int a)
-{
-	while (true)
-	{
-		cin >> a;
-		if (cin.fail())
-		{
-			cout << "Ошибка ввода. Вводи только цифры\n";
-			cin.clear();
-			cin.ignore(32767, '\n');
-		}
-		else return a;
-	}
-}
+void in(int start, Rate_list*& List, int& size);
 
-double checkinp(double a)
-{
-	while (true)
-	{
-		cin >> a;
-		if (cin.fail())
-		{
-			cout << "Ошибка ввода. Вводи только цифры\n";
-			cin.clear();
-			cin.ignore(32767, '\n');
-		}
-		else return a;
-	}
-}
+void find(Rate_list*& List, int& size);
 
-void input(int i)//ввод
-{
-	//просто переменные ввода
-	string str;
-	double d;
-	int j;
+void delet(Rate_list*& List, int& size);
 
-	cout << "Введите имя\n\n";
-	getline(cin, str);
-	stud[i].set_name(str);
-	cout << "Введите фамилию\n\n";
-	getline(cin, str);
-	stud[i].set_lname(str);
-	cout << "Введите отчество\n\n";
-	getline(cin, str);
-	stud[i].set_patr(str);
-	cout << "Введите номер группы\n\n";
-	cin >> j;
-	stud[i].set_numb(i);
-	cout << "Введите средний балл\n\n";
-	cin >> d;
-	stud[i].set_avg(d);
-	cout << "Введите доход на члена семьи\n\n";
-	cin >> j;
-	stud[i].set_numb(i);
+void display(Rate_list*& List, int& size);
 
+void output(Rate_list*& List, int t);
 
-}
+void update(Rate_list*& List, int& size);
 
+void sort(Rate_list*& List, int& size);
 
-void init()
-{
-	string str;
-	for (int i = 0; i < SIZEOFARR; i++)
-	{
-		stud[i].set_name(str);
-		stud[i].set_lname(str);
-		stud[i].set_patr(str);
-	}
-}
+int check_N();
 
-void firstfileout()
-{
-	int stop = 0;
-	string str;
-	for (; stop < SIZEOFARR; stop++) if (stud[stop].get_name() == str) break;
-	ofstream outf{ "output.txt" };
-	for (int i = 0; i < stop; i++)
-	{
-		outf << "Имя : \n";
-		outf << "Фамилия : \n";
-		outf << "Отчество : \n";
-		outf << "Номер группы : \n";
-		outf << "Средний балл : \n";
-		outf << "Доход на члена семьи : \n";//гыгыгыгыгыгыгыгы ЧЛЕНА гыгыгыгыгыгыгы
-	}
-}
+double check_D();
 
-void fileout()
-{
-	int stop = 0;
-	string str;
-	for (; stop < SIZEOFARR; stop++) if (stud[stop].get_name() == str) break;
-	ofstream outf{ "output.txt" };
-	for (int i = 0; i < stop; i++)
-	{
-		outf.seekp(6);
-		outf << stud[i].get_name() << "\n";
-		outf.seekp(10, ios::cur);
-		outf << stud[i].get_lname() << "\n";
-		outf.seekp(11, ios::cur);
-		outf << stud[i].get_patr() << "\n";
-		outf.seekp(15, ios::cur);
-		outf << stud[i].get_numb() << "\n";
-		outf.seekp(15, ios::cur);
-		outf << stud[i].get_avg() << "\n";
-		outf.seekp(23, ios::cur);
-		outf << stud[i].get_income() << "\n";//гыгыгыгыгыгыгыгы ЧЛЕНА гыгыгыгыгыгыгы
-	}
+double str_2_dbl(std::string s);
 
-}
+void meta(Rate_list*& List, int& size, int min_salaru);
 
-void enter()//ввод заранее заданного количества структур
-{
-	ifstream inf("input.txt");
-	string str;
-	int numrepeat;
-	inf >> numrepeat;
-	int newsize = numrepeat + SIZEOFARR;
+void file_write(Rate_list*& List, int& size, int S);
 
-	int ijk = 0;
+int file_find(Rate_list*& List, int& size);
 
-	students* newstud = new students[newsize];
+void file_change(Rate_list*& List, int& size, bool kostil);
 
-	//перенос значений
-	for (int i = 0; i < SIZEOFARR; i++)
-	{
-		newstud[i] = stud[i];
-	}
-
-	//инициализация(нужна для дальнейшей проверки)
-	/*for (int i = SIZEOFARR; i < newsize; i++)
-	{
-		stud[i].set_name(str);
-		stud[i].set_lname(str);
-		stud[i].set_patr(str);
-	}*/
-
-	delete[]stud;
-	stud = newstud;
-
-	for (ijk = 0; ijk < newsize; ijk++) if (stud[ijk].get_name() == str) break;
-	if (ijk == newsize)
-	{
-		cout << "Массив полон выдели больше места\n";
-		return;
-	}
-
-	//заполнение новыми
-	for (int i = ijk; i < newsize; i++)
-	{
-		string str;
-		int abc;
-		double bcd;
-		inf >> str;
-		stud[i].set_name(str);
-		inf >> str;
-		stud[i].set_lname(str);
-		inf >> str;
-		stud[i].set_patr(str);
-		inf >> abc;
-		stud[i].set_numb(abc);
-		inf >> bcd;
-		stud[i].set_avg(bcd);
-		inf >> abc;
-		stud[i].set_income(abc);
-	}
-
-	SIZEOFARR = newsize;
-	firstfileout();
-	fileout();
-}
-
-
-void display()//просмотр содержимого динамического массива структур
-{
-	string str;
-	int jzk = 0;
-	for (; jzk < SIZEOFARR; jzk++)
-	{
-		if (stud[jzk].get_name() == str) break;
-	}
-	for (int i = 0; i < 50; i++) printf("%c", '-');
-	printf("%c", '\n');
-	for (int i = 0; i < jzk; i++)
-	{
-		for (int i = 0; i < 50; i++) printf("%c", '-');
-		printf("%c", '\n');
-		cout << "Имя : " << stud[i].get_name() << "\n";
-		cout << "Фамилия : " << stud[i].get_lname() << "\n";
-		cout << "Отчество : " << stud[i].get_patr() << "\n";
-		cout << "Номер группы : " << stud[i].get_numb() << "\n";
-		cout << "Средний балл : " << stud[i].get_avg() << "\n";
-		cout << "Доход на члена семьи : " << stud[i].get_income() << "\n";//гыгыгыгыгыгыгыгы ЧЛЕНА гыгыгыгыгыгыгы
-		for (int i = 0; i < 50; i++) printf("%c", '-');
-		printf("%c", '\n');
-	}
-	for (int i = 0; i < 50; i++) printf("%c", '-');
-	printf("%c", '\n');
-}
-
-
-
-
-void addnewsrtuct()//дополнения уже существующего массива структур новыми структурами
-{
-	string str;
-
-	printf("%s", "Введите количество структур которые хотите добавить\n");
-	int numb = 0;
-	checkinp(numb);
-
-
-	int tempSIZEOFARR = SIZEOFARR + numb;
-	students* newstud = new students[tempSIZEOFARR];
-
-	for (int i = 0; i < SIZEOFARR; i++)
-	{
-		newstud[i] = stud[i];
-	}
-
-	/*for (int i = SIZEOFARR; i < tempSIZEOFARR; i++)
-	{
-		stud[i].set_name(str);
-		stud[i].set_lname(str);
-		stud[i].set_patr(str);
-	}*/
-	SIZEOFARR = tempSIZEOFARR;
-
-	delete[]stud;
-	stud = newstud;
-	fileout();
-}
-
-
-void del()//удаление элемента массива структур с заданным значением элемента
-{
-	printf("%s", "Введите номер структуры которую хотите удалить\n\n");
-	int numb = 0;
-	while (true)
-	{
-		checkinp(numb);
-		if (numb <= SIZEOFARR - 1) break;
-		else printf("%s", "Вы хотите удалить несуществующий элемент массива\n\n");
-	}
-
-	int tempSIZEOFARR = SIZEOFARR - 1;
-	students* newstud = new students[tempSIZEOFARR];
-
-
-	for (int i = 0; i < numb; i++)
-	{
-		newstud[i] = stud[i];
-	}
-
-	for (int i = numb, j = numb + 1; i < tempSIZEOFARR; i++, j++)
-	{
-		newstud[i] = stud[j];
-	}
-
-	SIZEOFARR = tempSIZEOFARR;
-
-	delete[]stud;
-	stud = newstud;
-	fileout();
-}
-
-void change()//изменение элемента массива структур с заданным значением элемента
-{
-	printf("%s", "Введите поле структуры, в котором будет признак прзнак структуры, которую необходимо заменить\n\n");
-	printf("%s", "N - имя\nL - фамилия\np - отчество\nn - номер группы\na - среднее\ni - доход на члена семьи\n\n");
-
-	char ch;
-	//ввод поля
-	while (true)//проверка ввода
-	{
-		scanf_s("%c", &ch);
-		if (ch == 'N' || ch == 'L' || ch == 'p' || ch == 'n' || ch == 'a' || ch == 'i') break;
-		else if (ch == '\n');
-		else printf("%s", "Введено не то значение, ожидалось: -N- -L- -p- -n- -a- -i- попробуйте заново\n\n");
-	}
-
-
-
-	printf("%s", "Введите признак структуры,которая будет заменена\n\n");
-
-	string str;
-	int izk;
-	double jzk;
-
-	//ввод признака
-	if (ch == 'N' || ch == 'L' || ch == 'p') cin >> str;
-	else if (ch == 'n' || ch == 'i') cin >> izk;
-	else if (ch == 'a') cin >> jzk;
-
-	int i = 0;
-	for (; i < SIZEOFARR; i++)
-	{
-		if (ch == 'N')
-		{
-			if (stud[i].get_name() == str)
-			{
-				input(i);
-				break;
-			}
-		}
-		if (ch == 'L')
-		{
-			if (stud[i].get_lname() == str)
-			{
-				input(i);
-				break;
-			}
-		}
-		if (ch == 'p')
-		{
-			if (stud[i].get_patr() == str)
-			{
-				input(i);
-				break;
-			}
-		}
-		if (ch == 'n')
-		{
-			if (stud[i].get_numb() == izk)
-			{
-				input(i);
-				break;
-			}
-		}
-		if (ch == 'i')
-		{
-			if (stud[i].get_income() == izk)
-			{
-				input(i);
-				break;
-			}
-		}
-		if (ch == 'a')
-		{
-			if (stud[i].get_avg() == jzk)
-			{
-				input(i);
-				break;
-			}
-		}
-	}
-	if (i == SIZEOFARR) printf("%s", "Структура с заданным признаком не была встречена\n\n");
-	fileout();
-}
-
-void sort()//Функция упорядочения массива структур
-{
-	string str;
-	int truesize = 0;
-	for (; truesize < SIZEOFARR; truesize++) if (stud[truesize].get_name() == str) break;
-	for (int i = 1; i < truesize; i++)
-	{
-		for (int j = 0; j < truesize - i; j++)
-		{
-			if (stud[j].get_avg() > stud[j + 1].get_avg())
-			{
-				swap(stud[j], stud[j + 1]);
-			}
-		}
-	}
-	fileout();
-}
-
-
-void task()
-{
-	sort();
-	const int twominsal = 2 * 457;
-	ofstream outf("taskoutput.txt");
-
-	//
-	char str[30];
-
-
-	for (int i = 0; i < SIZEOFARR; i++)
-	{
-		if (stud[i].get_income() < twominsal)
-		{
-			cout << "Фамилия : " << stud[i].get_lname() << "\n";
-			outf << "Фамилия : " << stud[i].get_lname() << "\n";
-		}
-	}
-}
-
-int menu()
-{
-	char ch;
-
-	printf("%s", " E - ввод заранее заданного количества структур\n D - отобразить содержимого динамического массива структур\n c - изменение структуры с заданным признаком\n X - расширить массив структур\n l - удалить эллемент массива структур\n s - сортировка эллементов массива от меньшего к большему\n T - задача\n Q - кончить выполнение программы\n\n");
-
-	while (true)
-	{
-		scanf_s("%c", &ch);
-		if (ch == 'E' || ch == 'P' || ch == 'D' || ch == 'd' || ch == 'c' || ch == 'X' || ch == 'l' || ch == 's' || ch == 'T' || ch == 'Q') break;
-		else
-			if (ch == '\n')
-			{
-				continue;
-			}
-			else printf("%s", "Ошибка ввода\n");
-	}
-
-	return ch;
-}
 
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	printf("%s", "Внимание размер изначального массива структур равен 3, поэтому в случае необходимости ввести большее количество структур, расширьте массив через функцию\n\n");
+	int min_salaru;
 
-	init();
-	char choice;
-	for (;;)
-	{
-		choice = menu();
-		switch (choice) {
-		case 'E':
-			enter();
+	int size = 0, num;
+	char har;
+
+	Rate_list* List = (Rate_list*)calloc(size, sizeof(Rate_list));
+
+	char ch;
+
+	std::cout << " в - ввести и следом число человек" << std::endl;
+	std::cout << " В - вводить до появления признака" << std::endl;
+	std::cout << " п - показать весь список" << std::endl;
+	std::cout << " о - обновить информацию о человеке" << std::endl;
+	std::cout << " н - найти по признаку" << std::endl;
+	std::cout << " у - удалить" << std::endl;
+	std::cout << " с - отсортировать по возрастанию " << std::endl;
+	std::cout << " м - вывести фамилии студентов у которых доход на члена семьи мень двух минимальных зарплат" << std::endl;
+	std::cout << " з - закончить" << std::endl;
+	_();
+
+	std::cout << "  Введите минимальную зарплату: ";
+	min_salaru = check_N();
+
+	_();
+
+	do {
+		std::cout << " Введите комманду: ";
+
+		std::cin >> ch;
+		switch (ch)
+		{
+		case 'в':
+			add(List, size);
+			file_change(List, size, 1);
+			/*file_write(List, size,0);*/
 			break;
-		case 'D':
-			display();
+		case 'В':
+			add_check(List, size);
+			file_change(List, size, 0);
 			break;
-		case 'c':
-			change();
+		case 'о':
+			update(List, size);
+			file_change(List, size, 1);
 			break;
-		case 'X':
-			addnewsrtuct();
+		case 'н':
+			find(List, size);
 			break;
-		case 'l':
-			del();
+		case 'п':
+			display(List, size);
 			break;
-		case 's':
-			sort();
+		case 'с':
+			sort(List, size);
+			file_change(List, size, 1);
 			break;
-		case 'T':
-			task();
+		case 'м':
+			meta(List, size, min_salaru);
 			break;
-		case 'Q':
-			delete[]stud;
+		case 'у':
+			delet(List, size);
+			file_change(List, size, 0);
+			/*file_write(List, size,0);*/
+			break;
+		case 'з':
 			return 0;
+
+		default:
+			std::cout << "Такой функции нет" << std::endl;;
+			break;
+		}
+
+		/*std::cin.clear();
+		std::cin.ignore(32767, '\n');*/
+
+	} while (ch != 'з');
+
+	free(List);
+
+	return 0;
+}
+
+void add(Rate_list*& List, int& size)
+{
+	int dop, start = size;
+
+	bool Л = true;
+
+	while (Л)
+	{
+		Л = false;
+		std::cin >> dop;
+
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+			std::cout << "   Ошибка ввода.Введите значение заного" << std::endl;
+			_();
+			Л = true;
+		}
+	}
+
+	//Rate_list* newList = new Rate_list[size + dop];
+
+	Rate_list* newList = (Rate_list*)calloc(size + dop, sizeof(Rate_list));
+
+	for (int i = 0; i < size; i++)
+	{
+		newList[i] = List[i];
+	}
+	size += dop;
+
+	//delete[]List;
+
+	free(List);
+
+	List = newList;
+
+	for (start; start < size; start++)
+	{
+		std::cout << "Введите имя: ";
+		char _name[40];
+		std::cin >> _name;
+		List[start].set_name(_name);
+
+		std::cout << "Введите фамилию: ";
+		char _surname[40];
+		std::cin >> _surname;
+		List[start].set_surname(_surname);
+
+		std::cout << "Введите отчество: ";
+		char _second_name[40];
+		std::cin >> _second_name;
+		List[start].set_second_name(_second_name);
+
+		std::cout << "Введите номер группы: ";
+		List[start].set_grup_nomber(check_N());
+
+		std::cin.clear();
+		std::cin.ignore(32767, '\n');
+
+		std::cout << "Введите средний балл: ";
+		List[start].set_average(check_D());
+
+		std::cout << "Введите доход: ";
+		List[start].set_stonks(check_N());
+
+		_();
+	}
+}
+
+void in(Rate_list*& List, int& size)
+{
+	int start = size;
+
+	//Rate_list* newList = new Rate_list[size + 1];
+
+	Rate_list* newList = (Rate_list*)calloc(size + 1, sizeof(Rate_list));
+
+	for (int i = 0; i < size; i++)
+	{
+		newList[i] = List[i];
+	}
+	size++;
+
+	free(List);
+
+	List = newList;
+
+	std::cout << "Введите имя: ";
+	char _name[40];
+	std::cin >> _name;
+	List[start].set_name(_name);
+
+	std::cout << "Введите фамилию: ";
+	char _surname[40];
+	std::cin >> _surname;
+	List[start].set_surname(_surname);
+
+	std::cout << "Введите отчество: ";
+	char _second_name[40];
+	std::cin >> _second_name;
+	List[start].set_second_name(_second_name);
+
+	std::cout << "Введите номер группы: ";
+	List[start].set_grup_nomber(check_N());
+
+	std::cin.clear();
+	std::cin.ignore(32767, '\n');
+
+	std::cout << "Введите средний балл: ";
+	List[start].set_average(check_D());
+
+	std::cout << "Введите доход: ";
+	List[start].set_stonks(check_N());
+
+	_();
+}
+
+void delet(Rate_list*& List, int& size)
+{
+	int num;
+	std::cin >> num;
+
+	if (num > size || num <= 0)
+	{
+		std::cout << " Ошибка ввода.";
+		return;
+	}
+
+	//Rate_list* newList = new Rate_list[size - 1];
+
+	Rate_list* newList = (Rate_list*)calloc(size - 1, sizeof(Rate_list));
+
+	for (int k = 0, j = 0; k < size; k++, j++)
+	{
+		if (k == num - 1 && num == size) continue;
+
+		if (k == num - 1) k++;
+
+		newList[j] = List[k];
+	}
+
+	size--;
+
+	free(List);
+
+	List = newList;
+	_();
+}
+
+void display(Rate_list*& List, int& size)
+{
+	int t;
+	bool b = true;
+
+	for (t = 0; t < size; t++) {
+
+		output(List, t);
+		b = false;
+	}
+	if (b)
+		std::cout << " \t\t\t\t\t Список пуст" << std::endl;
+}
+
+void output(Rate_list*& List, int t)
+{
+	I();
+	std::cout << "Имя: ";
+	std::cout << List[t].get_name();
+	_();
+
+	I();
+	std::cout << "Фамилия: ";
+	std::cout << List[t].get_surname();
+	_();
+
+	I();
+	std::cout << "Отчество: ";
+	std::cout << List[t].get_second_name();
+	_();
+
+	I();
+	std::cout << "Номер группы: ";
+	std::cout << List[t].get_grup_nomber();
+	_();
+
+	I();
+	std::cout << "Средний балл: ";
+	std::cout << std::fixed << std::showpoint << std::setprecision(7) << List[t].get_average();
+	_();
+
+	I();
+	std::cout << "Доход: ";
+	std::cout << List[t].get_stonks();
+	_(); _();
+
+}
+
+void find(Rate_list*& List, int& size)
+{
+	std::cout << "   Введите в каком поле хотите искать" << std::endl;
+
+	std::string abj;
+
+	std::cin.clear();
+	std::cin.ignore(32767, '\n');
+
+	while (1)
+	{
+
+		getline(std::cin, abj);
+
+		if (abj != "Имя" && abj != "Фамилия" && abj != "Отчество" && abj != "Номер в группе" && abj != "Средний балл" && abj != "Доход")
+		{
+			std::cout << "  Ошибка ввода.Такого поля не существует.Введите данные заного" << std::endl;
+			continue;
+		}
+		break;
+	}
+
+	std::cout << "   Введите, что хотите найти" << std::endl;
+	std::string l;
+
+	getline(std::cin, l);
+
+	bool J = true;
+
+	if (abj == "Имя")
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (List[i].get_name() == l)
+			{
+				J = false;
+				output(List, i);
+				_();
+			}
+		}
+	}
+	else if (abj == "Фамилия")
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (List[i].get_surname() == l)
+			{
+				output(List, i);
+				_();
+				J = false;
+			}
+		}
+	}
+	else if (abj == "Отчество")
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (List[i].get_second_name() == l)
+			{
+				output(List, i);
+				_();
+				J = false;
+			}
+		}
+	}
+	else if (abj == "Номер в группе")
+	{
+		int f = atoi(l.c_str());
+
+		for (int i = 0; i < size; i++)
+		{
+			if (List[i].get_grup_nomber() == f)
+			{
+				output(List, i);
+				_();
+				J = false;
+			}
+		}
+	}
+	else if (abj == "Средний балл")
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (str_2_dbl(l) == List[i].get_average())
+			{
+				output(List, i);
+				_();
+				J = false;
+			}
+		}
+	}
+	else if (abj == "Доход")
+	{
+		int f = atoi(l.c_str());
+
+		for (int i = 0; i < size; i++)
+		{
+			if (List[i].get_stonks() == f)
+			{
+				output(List, i);
+				_();
+				J = false;
+			}
+		}
+	}
+
+	if (J)
+		std::cout << "                                        Ничего не найдено" << std::endl;
+}
+
+void add_check(Rate_list*& List, int& size)
+{
+	std::cout << "   Введите в каком поле хотите искать" << std::endl;
+
+	std::cin.clear();
+	std::cin.ignore(32767, '\n');
+
+	int L = size;
+
+	std::string abj;
+
+	while (1)
+	{
+		getline(std::cin, abj);
+
+		if (abj != "Имя" && abj != "Фамилия" && abj != "Отчество" && abj != "Номер в группе" && abj != "Средний балл" && abj != "Доход")
+		{
+			std::cout << "  Ошибка ввода.Такого поля не существует.Введите данные заного" << std::endl;
+			continue;
+		}
+		break;
+	}
+
+	_();
+
+	bool J = true;
+
+	std::cout << "   Введите, что хотите найти" << std::endl;
+	std::string l;
+	getline(std::cin, l);
+
+	for (L; L < L + 1; L++)
+	{
+		in(List, size);
+		_();
+
+		if (abj == "Имя" && List[L].get_name() == l)
+			break;
+
+		else if (abj == "Фамилия" && List[L].get_surname() == l)
+			break;
+
+		else if (abj == "Отчество" && List[L].get_second_name() == l)
+			break;
+
+		else if (abj == "Номер в группе")
+		{
+			int f = atoi(l.c_str());
+			if (f == List[L].get_grup_nomber())
+				break;
+		}
+
+		else if (abj == "Средний балл")
+		{
+			double f = str_2_dbl(l);
+			if (f == List[L].get_average())
+				break;
+		}
+
+		else if (abj == "Доход")
+		{
+			int f = atoi(l.c_str());
+			if (f == List[L].get_stonks())
+				break;
 		}
 	}
 }
+
+void update(Rate_list*& List, int& size)
+{
+	int n;
+	std::cin >> n;
+
+	n--;
+
+	if (n + 1 > size || n + 1 <= 0)
+	{
+		std::cout << " Ошибка ввода.";
+		return;
+	}
+
+	std::cout << "Введите имя: ";
+	std::cin >> List[n].get_name();
+
+	std::cout << "Введите фамилию: ";
+	std::cin >> List[n].get_surname();
+
+	std::cout << "Введите отчество: ";
+	std::cin >> List[n].get_second_name();
+
+	std::cout << "Введите номер группы: ";
+	List[n].set_grup_nomber(check_N());
+
+	std::cin.clear();
+	std::cin.ignore(32767, '\n');
+
+	std::cout << "Введите средний балл: ";
+	List[n].set_average(check_D());
+
+	std::cout << "Введите доход: ";
+	List[n].set_stonks(check_N());
+
+	_();
+}
+
+void sort(Rate_list*& List, int& size)
+{
+	for (int i = 1; i < size; i++)
+		for (int j = i; j > 0 && List[j - 1].get_average() > List[j].get_average(); j--)
+		{
+			//swap(j - 1, j);
+
+			Rate_list buff;
+
+			buff = List[j - 1];
+			List[j - 1] = List[j];
+			List[j] = buff;
+		}
+}
+
+int check_N()                                     // Функция проверки стороны матрицы
+{
+	bool b = false;
+
+	int N;
+
+	while (b == false)
+	{
+		std::cin >> N;
+
+		if (std::cin.fail() || N <= 0)
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+			std::cout << "   Ошибка ввода. Введите значения заного" << std::endl;
+			_();
+		}
+		else
+		{
+			b = true;
+
+			return N;
+		}
+	}
+}
+
+double check_D()                                     // Функция проверки стороны матрицы
+{
+	bool b = false;
+
+	double N;
+
+	while (b == false)
+	{
+		std::cin >> N;
+
+		if (std::cin.fail() || N <= 0)
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+			std::cout << "   Ошибка ввода. Введите значения заного" << std::endl;
+			_();
+		}
+		else
+		{
+			b = true;
+
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+
+			return N;
+		}
+	}
+}
+
+double str_2_dbl(std::string s)
+{
+	int l = s.length();
+	int P;
+
+	bool point = false;
+
+	for (int i = 0; i < l; i++)
+	{
+		if ((s[i] < 48 || s[i]> 57) && s[i] != '.')
+		{
+			return -1;
+		}
+
+		if (s[i] == '.' && point)
+		{
+			return -1;
+		}
+
+		if (s[i] == '.')
+		{
+			point = true;
+			P = i;
+		}
+	}
+
+	if (!point)
+	{
+		return atoi(s.c_str());
+	}
+	else
+	{
+		int max_pow = P - 1;
+		double sum = 0;
+
+		for (int i = 0; i < l; i++)
+		{
+			if (i == P)i++;
+
+			sum += (s[i] - 48) * pow(10, max_pow);
+			max_pow--;
+		}
+
+		return sum;
+
+	}
+}
+
+void meta(Rate_list*& List, int& size, int min_salaru)
+{
+	bool a = false;
+
+	I();
+
+	for (int i = 0; i < size; i++)
+	{
+		if (List[i].get_stonks() < 2 * min_salaru)
+		{
+			if (!a)
+			{
+
+				std::cout << "Студенты с низким доходом в семье: " << std::endl;
+				_();
+				a = true;
+			}
+
+			I();
+			std::cout << List[i].get_surname() << std::endl;
+			_();
+		}
+	}
+
+	if (!a)
+	{
+		std::cout << "Нет студентов с низким доходом в семье";
+	}
+}
+
+int file_find(Rate_list*& List, int& size)
+{
+	fin.open("output.txt");
+	std::string* miakot = new std::string[6];
+	std::string* miaso = new std::string[8];
+
+	int N = size + 1;
+
+	for (int i = 0; i < size; i++)
+	{
+		fin >> miaso[0];
+		fin >> miakot[0];
+
+		fin >> miaso[1];
+		fin >> miakot[1];
+
+		fin >> miaso[2];
+		fin >> miakot[2];
+
+		fin >> miaso[3];
+		fin >> miaso[4];
+		fin >> miakot[3];
+
+		fin >> miaso[5];
+		fin >> miaso[6];
+		fin >> miakot[4];
+
+		fin >> miaso[7];
+		fin >> miakot[5];
+
+		Rate_list Bufer;
+
+		char name[40];
+
+		for (int i = 0; i < 40; i++)
+		{
+			name[i] = '\0';
+		}
+		int Lname = miakot[0].length();
+		for (int i = 0; i < Lname; i++)
+		{
+			name[i] = miakot[0][i];
+		}
+
+		char surname[40];
+		for (int i = 0; i < 40; i++)
+		{
+			surname[i] = '\0';
+		}
+		int Lsurname = miakot[1].length();
+		for (int i = 0; i < Lsurname; i++)
+		{
+			surname[i] = miakot[1][i];
+		}
+
+		char s_name[40];
+		for (int i = 0; i < 40; i++)
+		{
+			s_name[i] = '\0';
+		}
+		int Lsname = miakot[2].length();
+		for (int i = 0; i < Lsname; i++)
+		{
+			s_name[i] = miakot[2][i];
+		}
+
+		Bufer.set_name(name);
+		Bufer.set_surname(surname);
+		Bufer.set_second_name(s_name);
+
+		int f = atoi(miakot[3].c_str());
+		Bufer.set_grup_nomber(f);
+
+		double g = str_2_dbl(miakot[4]);
+		Bufer.set_average(g);
+
+		int h = atoi(miakot[5].c_str());
+		Bufer.set_stonks(h);
+
+		_();
+
+		if (Bufer.get_grup_nomber() != List[i].get_grup_nomber() || Bufer.get_average() != List[i].get_average() || Bufer.get_stonks() != List[i].get_stonks())
+		{
+			N = i + 1;
+			break;
+		}
+	}
+
+	std::cout << N;
+
+	fin.close();
+
+	return N;
+}
+
+void file_change(Rate_list*& List, int& size, bool kostil)
+{
+	int N = file_find(List, size) - 1;
+	int n = 0;
+
+	for (int i = 0; i < N; i++)
+	{
+		int a = strlen(List[i].get_name());
+
+		n += a;
+
+		a = strlen(List[i].get_surname());
+
+		n += a;
+
+		a = strlen(List[i].get_second_name());
+
+		n += a;
+
+		int b = List[i].get_grup_nomber();
+		int f;
+
+		for (f = 0; f == f; f++)
+		{
+			if (b % (int)pow(10, f) == b)
+			{
+				break;
+			}
+		}
+
+		n += f;
+
+		int g = List[i].get_stonks();
+		int h;
+
+		for (h = 0; h == h; h++)
+		{
+			if (g % (int)pow(10, h) == g)
+			{
+				break;
+			}
+		}
+
+		n += h;
+
+		double k = List[i].get_stonks();
+		int y = k;
+		int l;
+
+		for (l = 0; l == l; l++)
+		{
+			if (y % (int)pow(10, l) == y)
+			{
+				break;
+			}
+		}
+		n += l;
+
+		n += 73;
+	}
+
+	int Length = n;
+
+	std::fstream iofile("output.txt", std::ios::in | std::ios::out);
+
+	iofile.seekg(Length, std::ios::beg);
+
+	if (!kostil)
+	{
+		for (int i = 0; i < 7; i++)
+		{
+			iofile << "                                                  \n";
+		}
+
+		iofile.seekg(-364, std::ios::cur);
+	}
+
+	for (int t = N; t < size; t++)
+	{
+		if (t != N)
+			iofile << std::endl;
+		iofile << "Имя: ";
+		iofile << List[t].get_name();
+		iofile << std::endl;
+
+		iofile << "Фамилия: ";
+		iofile << List[t].get_surname();
+		iofile << std::endl;
+
+		iofile << "Отчество: ";
+		iofile << List[t].get_second_name();
+		iofile << std::endl;
+
+		iofile << "Номер группы: ";
+		iofile << List[t].get_grup_nomber();
+		iofile << std::endl;
+
+		iofile << "Средний балл: ";
+		iofile << List[t].get_average();
+		iofile << std::endl;
+
+		iofile << "Доход: ";
+		iofile << List[t].get_stonks();
+		iofile << std::endl;
+	}
+}
+

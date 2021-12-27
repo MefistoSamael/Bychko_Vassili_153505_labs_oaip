@@ -3,6 +3,7 @@
 #include <string.h>
 #include <string>
 #include <fstream>
+#include <filesystem>
 
 using namespace std;
 class students {
@@ -125,12 +126,12 @@ void input(int i)//ввод
 	double d;
 	int j;
 
-	cout << "Введите имя\n\n";
-	getline(cin, str);
-	stud[i].set_name(str);
 	cout << "Введите фамилию\n\n";
 	getline(cin, str);
 	stud[i].set_lname(str);
+	cout << "Введите имя\n\n";
+	getline(cin, str);
+	stud[i].set_name(str);
 	cout << "Введите отчество\n\n";
 	getline(cin, str);
 	stud[i].set_patr(str);
@@ -147,6 +148,14 @@ void input(int i)//ввод
 
 }
 
+int razryad(int n) {
+	int sum = 0;
+	while (n) {
+		n /= 10;
+		++sum;
+	}
+	return sum;
+}
 
 void init()
 {
@@ -159,35 +168,134 @@ void init()
 	}
 }
 
-void firstfileout()
+void obnov()
 {
-	int stop = 0;
-	string str;
-	for (; stop < SIZEOFARR; stop++) if (stud[stop].get_name() == str) break;
-	ofstream outf{ "output.txt" };
-	for (int i = 0; i < stop; i++)
+	string s;
+
+	cout << "Введите фамилию ученика,информация про которого вы хотите изменить : ";
+	cin >> s;
+	cin.ignore(1, '\n');
+
+	int i;
+	for (i = 0; i < SIZEOFARR; i++)
 	{
-	
-		outf << "Доход на члена семьи : \n";//гыгыгыгыгыгыгыгы ЧЛЕНА гыгыгыгыгыгыгы
+		if (s == stud[i].get_lname())
+			break;
+	}
+
+	if (i == SIZEOFARR)
+	{
+		cout << "\nтакого ученика нет)\n";
+		return;
+	}
+
+	cout << "Введите новые значения :\n";
+	input(i);
+	ofstream fout("output.txt", ios::binary | ios::out | ios::in);
+	fout.seekp(i * 6 * 52, ios::beg);
+	fout << "Фамилия: " << stud[i].get_lname();
+	for (int j = 9 + stud[i].get_lname().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52, ios::beg);
+	fout << "Имя: " << stud[i].get_name();
+	for (int j = 5 + stud[i].get_name().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 2, ios::beg);
+	fout << "Отчесвто: " << stud[i].get_patr();
+	for (int j = 10 + stud[i].get_patr().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 3, ios::beg);
+	fout << "Номер группы: " << stud[i].get_numb();
+	int n = razryad(stud[i].get_numb());
+	for (int j = 14 + n; j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 4, ios::beg);
+	fout << "Cредний балл: " << stud[i].get_avg();
+	n = razryad(stud[i].get_avg());
+	for (int j = 14 + n; j < 50; ++j) {
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 5, ios::beg);
+	fout << "Доход на члена семьи: " << stud[i].get_income();
+	n = razryad(stud[i].get_income());
+	for (int j = 22 + n; j < 50; ++j) {
+		fout << ' ';
 	}
 }
 
-void fileout()
+
+void fileout(int i)
 {
 	int stop = 0;
 	string str;
 	for (; stop < SIZEOFARR; stop++) if (stud[stop].get_name() == str) break;
-	ofstream outf{ "output.txt" };
+	/*ofstream outf{"output.txt"};
 	for (int i = 0; i < stop; i++)
 	{
-		outf << "Имя : " << stud[i].get_name() << "\n";
 		outf << "Фамилия : " << stud[i].get_lname() << "\n";
+		outf << "Имя : " << stud[i].get_name() << "\n";
 		outf << "Отчество : "<< stud[i].get_patr() << "\n";
 		outf << "Номер группы : " << stud[i].get_numb() << "\n";
 		outf << "Средний балл : " << stud[i].get_avg() << "\n";
 		outf << "Доход на члена семьи : "<< stud[i].get_income() << "\n";//гыгыгыгыгыгыгыгы ЧЛЕНА гыгыгыгыгыгыгы
-	}
 
+	}*/
+	ofstream fout("output.txt", ios::binary | ios::out | ios::in);
+	fout.seekp(i * 6 * 52, ios::beg);
+	fout << "Фамилия: " << stud[i].get_lname();
+	for (int j = 9 + stud[i].get_lname().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52, ios::beg);
+	fout << "Имя: " << stud[i].get_name();
+	for (int j = 5 + stud[i].get_name().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 2, ios::beg);
+	fout << "Отчесвто: " << stud[i].get_patr();
+	for (int j = 10 + stud[i].get_patr().size(); j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 3, ios::beg);
+	fout << "Номер группы: " << stud[i].get_numb();
+	int n = razryad(stud[i].get_numb());
+	for (int j = 14 + n; j < 50; ++j)
+	{
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 4, ios::beg);
+	fout << "Cредний балл: " << stud[i].get_avg();
+	n = razryad(stud[i].get_avg());
+	for (int j = 14 + n; j < 50; ++j) {
+		fout << ' ';
+	}
+	//fout << '\n';
+	fout.seekp(i * 6 * 52 + 52 * 5, ios::beg);
+	fout << "Доход на члена семьи: " << stud[i].get_income();
+	n = razryad(stud[i].get_income());
+	for (int j = 22 + n; j < 50; ++j) {
+		fout << ' ';
+	}
 }
 
 void enter()//ввод заранее заданного количества структур
@@ -247,7 +355,6 @@ void enter()//ввод заранее заданного количества с
 	}
 
 	SIZEOFARR = newsize;
-	firstfileout();
 	fileout();
 }
 
@@ -279,6 +386,92 @@ void display()//просмотр содержимого динамическог
 	printf("%c", '\n');
 }
 
+void delet()
+{
+	int k = 0;
+	string s;
+
+	cout << "Введите фамилию ученика,информация про которого вы хотите удалить : ";
+	cin >> s;
+
+	if (SIZEOFARR == 0)
+	{
+		cout << "\nНет элементов для удаления,База данных пуста\n";
+		return;
+	}
+
+	students* newstud = new students[SIZEOFARR - 1];
+
+	for (int i = 0; i < SIZEOFARR; i++)
+	{
+		if (stud[i].get_lname() != s)
+		{
+			k++;
+		}
+	}
+
+	if (k == SIZEOFARR)
+	{
+		cout << "\nНевозмождно выполнить!\n";
+		return;
+	}
+
+	ofstream fout("output.txt", ios_base::app);
+	int a;
+	for (int i = 0, j = 0; i < SIZEOFARR; i++)
+	{
+		if (stud[i].get_lname() != s)
+		{
+			newstud[j] = stud[i];
+			j++;
+		}
+		else
+		{
+			a = i;
+		}
+	}
+	SIZEOFARR--;
+	filesystem::resize_file("output.txt", 52 * 6 * a);
+	for (int i = a; i < SIZEOFARR; i++) {
+		fout << "Фамилия: " << newstud[i].get_lname();
+		for (int j = 9 + newstud[i].get_lname().size(); j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+		fout << "Имя: " << newstud[i].get_name();
+		for (int j = 5 + newstud[i].get_name().size(); j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+		fout << "Отчесвто: " << newstud[i].get_patr();
+		for (int j = 10 + newstud[i].get_patr().size(); j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+		fout << "Номер группы: " << newstud[i].get_numb();
+		int n = razryad(newstud[i].get_numb());
+		for (int j = 14 + n; j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+		fout << "Средний балл: " << newstud[i].get_avg();
+		n = razryad(newstud[i].get_avg());
+		for (int j = 14 + n; j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+		fout << "Доход на члена семьи: " << newstud[i].get_income();
+		n = razryad(newstud[i].get_income());
+		for (int j = 22 + n; j < 50; ++j) {
+			fout << ' ';
+		}
+		fout << '\n';
+	}
+
+	delete[] stud;
+
+	stud = newstud;
+}
 
 
 
@@ -517,13 +710,13 @@ int main()
 			display();
 			break;
 		case 'c':
-			change();
+			obnov();
 			break;
 		case 'X':
 			addnewsrtuct();
 			break;
 		case 'l':
-			del();
+			delet();
 			break;
 		case 's':
 				sort();
@@ -537,3 +730,4 @@ int main()
 		}
 	}
 }
+

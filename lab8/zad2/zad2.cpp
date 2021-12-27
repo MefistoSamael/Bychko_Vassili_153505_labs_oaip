@@ -334,7 +334,7 @@ void sort()//Функция упорядочения массива структ
 void task()
 {
 	sort();
-	ofstream outf("taskoutput.txt");
+	ofstream outf("taskoutput.txt", ios::app);
 	char str[30];
 
 	cout << "Введите пункт назначения, для которого Вывести все номера рейсов, типы самолетов и времена вылета\n";
