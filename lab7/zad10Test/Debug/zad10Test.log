@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  test.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10Test\test.cpp(5,36): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10Test\test.cpp(30,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10Test\test.cpp(31,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10Test\test.cpp(75): warning C4715: 'check': not all control paths return a value
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad10Test.exe not found or not built by the last incremental link; performing full link
+  zad10Test.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad10Test.exe

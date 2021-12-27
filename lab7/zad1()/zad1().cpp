@@ -42,18 +42,8 @@ int main()
 
 	
 	//перевод в троичную СС
-	//норм реализация этой части ниже)))))))
-	cout << endl;
-	for (long long i = numb10; i > 0;)
-	{
-		int temp = i % 3;
-		i /= 3;
-		cout << temp;
 
-	}
-	cout << " = 3bmun";
-
-	/*long long n = 0;
+	long long n = 0;
 	cout << "numb3 = ";
 
 
@@ -67,11 +57,10 @@ int main()
 		i -= j3 * n;
 		j3 /= 3;
 		cout << n;
-	}*/
+	}
 	
 
 
-	//для вывода: сдвигать на один символ
 	return 0;
 }
 

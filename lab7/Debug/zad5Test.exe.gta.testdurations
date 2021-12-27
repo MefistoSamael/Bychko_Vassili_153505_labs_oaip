@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Executable>C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad5Test.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="TestCaseName.Test1" Duration="1" />
+    <TestDuration Test="TestCaseName.Test2" Duration="1" />
+    <TestDuration Test="TestCaseName.Test3" Duration="1" />
+    <TestDuration Test="TestCaseName.Test4" Duration="1" />
+    <TestDuration Test="TestCaseName.Test5" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>

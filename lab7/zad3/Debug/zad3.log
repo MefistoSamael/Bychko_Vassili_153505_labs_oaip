@@ -1,0 +1,5 @@
+﻿  zad3.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3\zad3.cpp(6,33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3\zad3.cpp(61,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3\zad3.cpp(78,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  zad3.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad3.exe

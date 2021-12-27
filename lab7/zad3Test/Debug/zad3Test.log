@@ -1,0 +1,7 @@
+﻿  pch.cpp
+  test.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3Test\test.cpp(9,33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3Test\test.cpp(69,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad3Test\test.cpp(86,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad3Test.exe not found or not built by the last incremental link; performing full link
+  zad3Test.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad3Test.exe

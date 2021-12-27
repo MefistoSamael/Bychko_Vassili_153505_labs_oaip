@@ -1,0 +1,10 @@
+﻿  test.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(11,22): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(23,29): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(40,20): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(40,31): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(72,20): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(104,20): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(114,28): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad8Test\test.cpp(84,24): warning C4101: 'i': unreferenced local variable
+  zad8Test.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad8Test.exe

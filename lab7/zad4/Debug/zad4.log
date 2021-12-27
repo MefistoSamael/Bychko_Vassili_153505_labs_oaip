@@ -1,0 +1,9 @@
+﻿  zad4.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(179,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(222,34): warning C4244: '=': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(231,34): warning C4244: '=': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(365,11): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(376,11): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad4\zad4.cpp(16): warning C4715: 'numb': not all control paths return a value
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad4.exe not found or not built by the last incremental link; performing full link
+  zad4.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad4.exe

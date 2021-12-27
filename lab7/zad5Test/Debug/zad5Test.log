@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  test.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad5Test\test.cpp(108,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad5Test\test.cpp(122,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad5Test\test.cpp(136,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad5Test\test.cpp(150,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad5Test\test.cpp(164,20): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad5Test.exe not found or not built by the last incremental link; performing full link
+  zad5Test.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad5Test.exe

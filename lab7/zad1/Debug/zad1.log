@@ -1,4 +1,5 @@
 ﻿  zad1.cpp
-C:\Users\User\source\repos\lab7\zad1\zad1.cpp(66,42): warning C4244: +=: преобразование "long double" в "__int64", возможна потеря данных
-C:\Users\User\source\repos\lab7\zad1\zad1.cpp(59): warning C4715: numb: значение возвращается не при всех путях выполнения
-  zad1.vcxproj -> C:\Users\User\source\repos\lab7\Debug\zad1.exe
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1\zad1.cpp(66,42): warning C4244: '+=': conversion from 'long double' to '__int64', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1\zad1.cpp(59): warning C4715: 'numb': not all control paths return a value
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad1.exe not found or not built by the last incremental link; performing full link
+  zad1.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad1.exe

@@ -1,8 +1,10 @@
-﻿  zad1().cpp
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(33,23): warning C4244: =: преобразование "double" в "__int64", возможна потеря данных
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(34,37): warning C4244: =: преобразование "std::streamsize" в "int", возможна потеря данных
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(38,38): warning C4244: +=: преобразование "double" в "__int64", возможна потеря данных
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(51,47): warning C4244: =: преобразование "double" в "__int64", возможна потеря данных
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(70): warning C4715: numb: значение возвращается не при всех путях выполнения
-C:\Users\User\source\repos\lab7\zad1()\zad1().cpp(18): warning C4715: numbtochar: значение возвращается не при всех путях выполнения
-  zad1().vcxproj -> C:\Users\User\source\repos\lab7\Debug\zad1().exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (zad1().vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  zad1().cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(33,23): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(34,37): warning C4244: '=': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(38,38): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(52,47): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(71): warning C4715: 'numb': not all control paths return a value
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad1()\zad1().cpp(18): warning C4715: 'numbtochar': not all control paths return a value
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad1noarray.exe not found or not built by the last incremental link; performing full link
+  zad1().vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad1noarray.exe

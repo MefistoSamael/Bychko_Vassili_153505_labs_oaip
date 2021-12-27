@@ -1,0 +1,6 @@
+﻿  zad10.cpp
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10\zad10.cpp(6,36): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10\zad10.cpp(31,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\zad10\zad10.cpp(32,35): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+  LINK : C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad10.exe not found or not built by the last incremental link; performing full link
+  zad10.vcxproj -> C:\Program Files (x86)\c++projects\Bychko_Vassili_153505_labs\labb7\Debug\zad10.exe
