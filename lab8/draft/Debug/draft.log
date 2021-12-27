@@ -1,0 +1,11 @@
+﻿  draft.cpp
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(357,11): warning C4473: "scanf_s": передано недостаточно аргументов для строки формата
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(357,11): message : заполнители и их параметры ожидают переменное число аргументов в количестве 2, но было предоставлено 1
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(357,11): message : отсутствующий вариативный аргумент "2" требуется для строки форматирования "%c"
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(357,11): message : этот аргумент используется в качестве размера буфера
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(466,7): warning C4101: str: неиспользованная локальная переменная
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(487,11): warning C4473: "scanf_s": передано недостаточно аргументов для строки формата
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(487,11): message : заполнители и их параметры ожидают переменное число аргументов в количестве 2, но было предоставлено 1
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(487,11): message : отсутствующий вариативный аргумент "2" требуется для строки форматирования "%c"
+E:\!C++projects\Bychko_Vassili_153505_labs\lab8\draft\draft.cpp(487,11): message : этот аргумент используется в качестве размера буфера
+  draft.vcxproj -> E:\!C++projects\Bychko_Vassili_153505_labs\lab8\Debug\draft.exe

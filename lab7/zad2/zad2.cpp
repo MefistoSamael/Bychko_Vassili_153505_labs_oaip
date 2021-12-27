@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c55ed42e43d68286a1479cc183f95dbee90a0c8
 #include <iostream>
 using namespace std;
 
@@ -37,3 +41,7 @@ int main()
 
 	return 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c55ed42e43d68286a1479cc183f95dbee90a0c8
